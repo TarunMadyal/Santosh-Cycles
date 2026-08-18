@@ -29,7 +29,7 @@ h1, h2, h3, p { margin-top: 0; }
 .desktop-nav { display: none; }
 .language-toggle { align-items: center; background: var(--ink); border: 0; border-radius: 999px; color: white; cursor: pointer; display: flex; font-size: 13px; font-weight: 800; gap: 7px; min-height: 42px; padding: 0 14px; }
 
-.hero { background: url("https://images.pexels.com/photos/132695/pexels-photo-132695.jpeg?auto=compress&cs=tinysrgb&w=1800") center/cover; min-height: 630px; position: relative; }
+.hero { background: url("/hero-mobile-v2.webp") center 32%/cover no-repeat; min-height: 630px; position: relative; }
 .hero-overlay { background: linear-gradient(180deg, rgba(8,17,34,.12) 0%, rgba(8,17,34,.45) 40%, rgba(8,17,34,.94) 100%); inset: 0; position: absolute; }
 .hero::after { color: rgba(255,255,255,.08); content: "SC"; font-size: 38vw; font-weight: 950; letter-spacing: -.12em; line-height: .7; position: absolute; right: -3vw; top: 16%; user-select: none; }
 .hero-content { bottom: 0; color: white; left: 50%; padding-bottom: 42px; position: absolute; transform: translateX(-50%); z-index: 2; }
@@ -147,7 +147,7 @@ h1 { font-size: clamp(43px, 11.5vw, 80px); letter-spacing: -.064em; line-height:
   .desktop-nav { display: flex; gap: 32px; justify-content: center; }
   .desktop-nav a { font-size: 13px; font-weight: 800; }
   .language-toggle { justify-self: end; }
-  .hero { min-height: 720px; }
+  .hero { background-image: url("https://images.pexels.com/photos/132695/pexels-photo-132695.jpeg?auto=compress&cs=tinysrgb&w=1800"); background-position: center; min-height: 720px; }
   .hero::after { font-size: 300px; right: 2vw; top: 24%; }
   .hero-content { padding-bottom: 70px; }
   .hero-copy { font-size: 18px; }
