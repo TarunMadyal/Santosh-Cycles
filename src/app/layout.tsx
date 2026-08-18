@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://santosh-cycles-haveri.vercel.app"),
+  metadataBase: new URL("https://santosh-cycles-seven.vercel.app"),
   title: {
     default: "Santosh Cycles | Cycles, Accessories & Repairs in Haveri",
     template: "%s | Santosh Cycles",
