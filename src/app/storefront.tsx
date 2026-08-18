@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import {
   Bike,
   CheckCircle2,
@@ -337,7 +338,11 @@ export function Storefront({ products }: { products: Product[] }) {
                     </div>
                     <div className="product-content">
                       <p className="product-meta">{product.brand ?? t.filters[product.category]}{product.wheel_size ? ` · ${product.wheel_size}` : ""}</p>
-                      <h3>{name}</h3>
+                      <h3>
+                        <Link aria-label={`View details for ${name}`} href={`/products/${encodeURIComponent(product.slug)}`}>
+                          {name}<ChevronRight aria-hidden="true" size={16} />
+                        </Link>
+                      </h3>
                       {description && <p className="product-description">{description}</p>}
                       <div className="product-footer">
                         <strong>{product.price === null ? t.pricePending : formatPrice(product.price, language)}</strong>
