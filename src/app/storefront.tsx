@@ -362,7 +362,7 @@ export function Storefront({ products }: { products: Product[] }) {
 
       <section className="repairs-section" id="repairs">
         <div className="repair-image">
-          <Image src="/repair-workshop.jpg" alt="A cycle being repaired in a workshop" fill sizes="(max-width: 899px) 100vw, 50vw" />
+          <Image src="https://images.pexels.com/photos/132682/pexels-photo-132682.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="A cycle being repaired in a workshop" fill sizes="(max-width: 899px) 100vw, 50vw" />
         </div>
         <div className="repair-content">
           <p className="eyebrow light-eyebrow">{t.repairsEyebrow}</p>
