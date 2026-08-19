@@ -28,7 +28,9 @@ const detailCopy = {
     languageLabel: "Switch product page to Kannada",
     back: "Back to all products",
     available: "Available at Santosh Cycles",
-    exactPrice: "WhatsApp us for exact price",
+    exactPricePrefix: "",
+    whatsappName: "WhatsApp",
+    exactPriceSuffix: " us for exact price",
     enquire: "Ask on WhatsApp",
     call: "Call the store",
     details: "Product details",
@@ -52,7 +54,9 @@ const detailCopy = {
     languageLabel: "ಉತ್ಪನ್ನ ಪುಟವನ್ನು ಇಂಗ್ಲಿಷ್‌ಗೆ ಬದಲಿಸಿ",
     back: "ಎಲ್ಲಾ ಉತ್ಪನ್ನಗಳಿಗೆ ಹಿಂತಿರುಗಿ",
     available: "ಸಂತೋಷ್ ಸೈಕಲ್ಸ್‌ನಲ್ಲಿ ಲಭ್ಯವಿದೆ",
-    exactPrice: "ನಿಖರ ಬೆಲೆಗೆ ವಾಟ್ಸಾಪ್ ಮಾಡಿ",
+    exactPricePrefix: "ನಿಖರ ಬೆಲೆಗೆ ",
+    whatsappName: "ವಾಟ್ಸಾಪ್",
+    exactPriceSuffix: " ಮಾಡಿ",
     enquire: "ವಾಟ್ಸಾಪ್‌ನಲ್ಲಿ ವಿಚಾರಿಸಿ",
     call: "ಅಂಗಡಿಗೆ ಕರೆ ಮಾಡಿ",
     details: "ಉತ್ಪನ್ನದ ವಿವರಗಳು",
@@ -207,10 +211,14 @@ export function ProductDetail({ product }: { product: ProductDetails }) {
                 ))}
               </div>
             )}
-            <p className="detail-price">{t.exactPrice}</p>
+            <p className="detail-price">
+              {t.exactPricePrefix}
+              <span className="detail-whatsapp-name">{t.whatsappName}</span>
+              {t.exactPriceSuffix}
+            </p>
 
             <div className="detail-actions">
-              <a className="button button-primary" href={`https://wa.me/${PRIMARY_PHONE.slice(1)}?text=${whatsappMessage}`} target="_blank" rel="noreferrer"><MessageCircle aria-hidden="true" size={20} />{t.enquire}</a>
+              <a className="button detail-whatsapp-button" href={`https://wa.me/${PRIMARY_PHONE.slice(1)}?text=${whatsappMessage}`} target="_blank" rel="noreferrer"><MessageCircle aria-hidden="true" size={20} />{t.enquire}</a>
               <a className="button detail-call-button" href={`tel:${PRIMARY_PHONE}`}><Phone aria-hidden="true" size={19} />{t.call}</a>
             </div>
 
