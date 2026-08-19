@@ -163,6 +163,10 @@ export function ProductDetail({ product }: { product: ProductDetails }) {
   const t = detailCopy[language];
   const name = language === "kn" && product.name_kn ? product.name_kn : product.name_en;
   const description = language === "kn" && product.description_kn ? product.description_kn : product.description_en;
+  const descriptionSections = description
+    ?.split(/\n\s*\n/)
+    .map((section) => section.trim())
+    .filter(Boolean) ?? [];
   const whatsappMessage = encodeURIComponent(
     `Hello Santosh Cycles, I am interested in ${product.name_en}. Please share the exact price and availability.`,
   );
@@ -196,7 +200,13 @@ export function ProductDetail({ product }: { product: ProductDetails }) {
             <p className="detail-availability"><ShieldCheck aria-hidden="true" size={17} />{t.available}</p>
             <h1>{name}</h1>
             <p className="detail-product-meta">{product.brand ?? t.categories[product.category]}{product.wheel_size ? ` · ${product.wheel_size}` : ""}</p>
-            {description && <p className="detail-description">{description}</p>}
+            {descriptionSections.length > 0 && (
+              <div className="detail-description">
+                {descriptionSections.map((section, index) => (
+                  <p key={`${index}-${section.slice(0, 24)}`}>{section}</p>
+                ))}
+              </div>
+            )}
             <p className="detail-price">{t.exactPrice}</p>
 
             <div className="detail-actions">

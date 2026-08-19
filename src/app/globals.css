@@ -225,7 +225,9 @@ h1 { font-size: clamp(43px, 11.5vw, 80px); letter-spacing: -.064em; line-height:
 .detail-availability { align-items: center; color: var(--green); display: flex; font-size: 11px; font-weight: 900; gap: 7px; letter-spacing: .05em; margin-bottom: 13px; text-transform: uppercase; }
 .detail-product-info h1 { font-size: clamp(38px, 10vw, 64px); margin-bottom: 12px; }
 .detail-product-meta { color: var(--blue); font-size: 12px; font-weight: 900; letter-spacing: .08em; margin-bottom: 23px; text-transform: uppercase; }
-.detail-description { color: var(--muted); font-size: 15px; line-height: 1.7; margin-bottom: 24px; }
+.detail-description { color: var(--muted); font-size: 15px; line-height: 1.65; margin-bottom: 26px; }
+.detail-description p { margin: 0; white-space: pre-line; }
+.detail-description p + p { margin-top: 11px; }
 .detail-price { font-size: 30px; font-weight: 950; letter-spacing: -.04em; margin-bottom: 25px; }
 .detail-actions { display: grid; gap: 10px; }
 .detail-call-button { background: white; border: 1px solid #d7d7d1; color: var(--ink); }
