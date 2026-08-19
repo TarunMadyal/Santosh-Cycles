@@ -9,7 +9,7 @@ Products are managed from the website and appear in the catalogue automatically.
 5. Select up to eight JPG, PNG or WebP photos, each no larger than 5 MB.
 6. Select **Add product**. The images are uploaded and linked automatically; no public URLs need to be copied.
 
-Use a short lowercase slug such as `hercules-roadeo-26-red`. Prices should be entered as numbers without the ₹ symbol. Turn off **Visible on website** when a product should temporarily disappear. Existing products can be edited and given more photos from the same page.
+Use a short lowercase slug such as `hercules-roadeo-26-red`. Exact prices are currently hidden from the public catalogue, so the price field can be left blank. Turn off **Visible on website** when a product should temporarily disappear. Existing products can be edited and given more photos from the same page.
 
 The homepage refreshes its catalogue within about one minute. Each product also has a dedicated, shareable page with a swipeable photo gallery.
 

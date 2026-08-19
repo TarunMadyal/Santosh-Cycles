@@ -63,10 +63,10 @@ const copy = {
     },
     emptyTitle: "The online catalogue is being prepared.",
     emptyBody:
-      "Until product photos and prices are added, call or WhatsApp us for current stock and recommendations.",
+      "Browse our catalogue, then call or WhatsApp us for current stock, the exact price and recommendations.",
     askStock: "Ask about current stock",
-    pricePending: "Price to be added",
-    enquire: "Enquire",
+    exactPrice: "Exact price on WhatsApp",
+    enquire: "WhatsApp us",
     repairsEyebrow: "Repairs, end to end",
     repairsTitle: "From a puncture to a complete rebuild.",
     repairsBody:
@@ -139,10 +139,10 @@ const copy = {
     },
     emptyTitle: "ಆನ್‌ಲೈನ್ ಕ್ಯಾಟಲಾಗ್ ಸಿದ್ಧವಾಗುತ್ತಿದೆ.",
     emptyBody:
-      "ಉತ್ಪನ್ನಗಳ ಫೋಟೋ ಮತ್ತು ಬೆಲೆಗಳನ್ನು ಸೇರಿಸುವವರೆಗೆ, ಪ್ರಸ್ತುತ ಸ್ಟಾಕ್ ಮತ್ತು ಸಲಹೆಗಾಗಿ ಕರೆ ಅಥವಾ ವಾಟ್ಸಾಪ್ ಮಾಡಿ.",
+      "ನಮ್ಮ ಉತ್ಪನ್ನಗಳನ್ನು ನೋಡಿ; ಪ್ರಸ್ತುತ ಸ್ಟಾಕ್, ನಿಖರ ಬೆಲೆ ಮತ್ತು ಸಲಹೆಗಾಗಿ ಕರೆ ಅಥವಾ ವಾಟ್ಸಾಪ್ ಮಾಡಿ.",
     askStock: "ಪ್ರಸ್ತುತ ಸ್ಟಾಕ್ ವಿಚಾರಿಸಿ",
-    pricePending: "ಬೆಲೆ ಶೀಘ್ರದಲ್ಲೇ",
-    enquire: "ವಿಚಾರಿಸಿ",
+    exactPrice: "ನಿಖರ ಬೆಲೆಗೆ ವಾಟ್ಸಾಪ್ ಮಾಡಿ",
+    enquire: "ವಾಟ್ಸಾಪ್ ಮಾಡಿ",
     repairsEyebrow: "ಸಂಪೂರ್ಣ ರಿಪೇರಿ ಸೇವೆ",
     repairsTitle: "ಪಂಕ್ಚರ್‌ನಿಂದ ಸಂಪೂರ್ಣ ರಿಪೇರಿ ವರೆಗೆ.",
     repairsBody:
@@ -204,14 +204,6 @@ function getServerLanguageSnapshot(): Language {
 
 const categoryStyles = ["category-cobalt", "category-coral", "category-sun", "category-ink"];
 const categoryIcons = [Bike, UsersRound, Bike, Cog];
-
-function formatPrice(value: number, language: Language) {
-  return new Intl.NumberFormat(language === "kn" ? "kn-IN" : "en-IN", {
-    style: "currency",
-    currency: "INR",
-    maximumFractionDigits: 0,
-  }).format(value);
-}
 
 export function Storefront({ products }: { products: Product[] }) {
   const [filter, setFilter] = useState<Filter>("all");
@@ -327,7 +319,7 @@ export function Storefront({ products }: { products: Product[] }) {
               {visibleProducts.map((product) => {
                 const name = language === "kn" && product.name_kn ? product.name_kn : product.name_en;
                 const description = language === "kn" && product.description_kn ? product.description_kn : product.description_en;
-                const message = encodeURIComponent(`Hello Santosh Cycles, I am interested in ${product.name_en}. Is it available?`);
+                const message = encodeURIComponent(`Hello Santosh Cycles, I am interested in ${product.name_en}. Please share the exact price and availability.`);
                 return (
                   <article className="product-card" key={product.id}>
                     <div className="product-image">
@@ -345,7 +337,7 @@ export function Storefront({ products }: { products: Product[] }) {
                       </h3>
                       {description && <p className="product-description">{description}</p>}
                       <div className="product-footer">
-                        <strong>{product.price === null ? t.pricePending : formatPrice(product.price, language)}</strong>
+                        <strong>{t.exactPrice}</strong>
                         <a href={`https://wa.me/${PRIMARY_PHONE.slice(1)}?text=${message}`} target="_blank" rel="noreferrer">{t.enquire}</a>
                       </div>
                     </div>

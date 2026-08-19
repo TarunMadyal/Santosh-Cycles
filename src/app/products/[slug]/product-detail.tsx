@@ -28,7 +28,7 @@ const detailCopy = {
     languageLabel: "Switch product page to Kannada",
     back: "Back to all products",
     available: "Available at Santosh Cycles",
-    pricePending: "Contact for price",
+    exactPrice: "WhatsApp us for exact price",
     enquire: "Ask on WhatsApp",
     call: "Call the store",
     details: "Product details",
@@ -52,7 +52,7 @@ const detailCopy = {
     languageLabel: "ಉತ್ಪನ್ನ ಪುಟವನ್ನು ಇಂಗ್ಲಿಷ್‌ಗೆ ಬದಲಿಸಿ",
     back: "ಎಲ್ಲಾ ಉತ್ಪನ್ನಗಳಿಗೆ ಹಿಂತಿರುಗಿ",
     available: "ಸಂತೋಷ್ ಸೈಕಲ್ಸ್‌ನಲ್ಲಿ ಲಭ್ಯವಿದೆ",
-    pricePending: "ಬೆಲೆಗೆ ಸಂಪರ್ಕಿಸಿ",
+    exactPrice: "ನಿಖರ ಬೆಲೆಗೆ ವಾಟ್ಸಾಪ್ ಮಾಡಿ",
     enquire: "ವಾಟ್ಸಾಪ್‌ನಲ್ಲಿ ವಿಚಾರಿಸಿ",
     call: "ಅಂಗಡಿಗೆ ಕರೆ ಮಾಡಿ",
     details: "ಉತ್ಪನ್ನದ ವಿವರಗಳು",
@@ -90,14 +90,6 @@ function getLanguageSnapshot(): Language {
 
 function getServerLanguageSnapshot(): Language {
   return "en";
-}
-
-function formatPrice(value: number, language: Language) {
-  return new Intl.NumberFormat(language === "kn" ? "kn-IN" : "en-IN", {
-    style: "currency",
-    currency: "INR",
-    maximumFractionDigits: 0,
-  }).format(value);
 }
 
 function ProductGallery({ images, language, productName }: { images: ProductImage[]; language: Language; productName: string }) {
@@ -172,7 +164,7 @@ export function ProductDetail({ product }: { product: ProductDetails }) {
   const name = language === "kn" && product.name_kn ? product.name_kn : product.name_en;
   const description = language === "kn" && product.description_kn ? product.description_kn : product.description_en;
   const whatsappMessage = encodeURIComponent(
-    `Hello Santosh Cycles, I am interested in ${product.name_en}. Is it available?`,
+    `Hello Santosh Cycles, I am interested in ${product.name_en}. Please share the exact price and availability.`,
   );
 
   useEffect(() => {
@@ -205,7 +197,7 @@ export function ProductDetail({ product }: { product: ProductDetails }) {
             <h1>{name}</h1>
             <p className="detail-product-meta">{product.brand ?? t.categories[product.category]}{product.wheel_size ? ` · ${product.wheel_size}` : ""}</p>
             {description && <p className="detail-description">{description}</p>}
-            <p className="detail-price">{product.price === null ? t.pricePending : formatPrice(product.price, language)}</p>
+            <p className="detail-price">{t.exactPrice}</p>
 
             <div className="detail-actions">
               <a className="button button-primary" href={`https://wa.me/${PRIMARY_PHONE.slice(1)}?text=${whatsappMessage}`} target="_blank" rel="noreferrer"><MessageCircle aria-hidden="true" size={20} />{t.enquire}</a>
