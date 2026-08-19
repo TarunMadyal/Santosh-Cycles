@@ -37,7 +37,7 @@ const detailCopy = {
     brand: "Brand",
     category: "Category",
     wheel: "Wheel size",
-    visit: "See it at our MG Road store in Haveri",
+    visit: "See it at our MG Road store near Head Post Office in Haveri",
     support: "Assembly, fitting guidance and complete repair support available in store.",
     gallery: "Product photo",
     categories: {
@@ -63,7 +63,7 @@ const detailCopy = {
     brand: "ಬ್ರಾಂಡ್",
     category: "ವರ್ಗ",
     wheel: "ವೀಲ್ ಗಾತ್ರ",
-    visit: "ಹಾವೇರಿಯ ಎಂ.ಜಿ. ರಸ್ತೆಯ ಅಂಗಡಿಯಲ್ಲಿ ನೋಡಿ",
+    visit: "ಹಾವೇರಿಯ ಮುಖ್ಯ ಅಂಚೆ ಕಚೇರಿ ಹತ್ತಿರದ ಎಂ.ಜಿ. ರಸ್ತೆಯ ಅಂಗಡಿಯಲ್ಲಿ ನೋಡಿ",
     support: "ಅಸೆಂಬ್ಲಿ, ಸರಿಯಾದ ಗಾತ್ರದ ಮಾರ್ಗದರ್ಶನ ಮತ್ತು ಸಂಪೂರ್ಣ ರಿಪೇರಿ ಬೆಂಬಲ ಲಭ್ಯವಿದೆ.",
     gallery: "ಉತ್ಪನ್ನದ ಚಿತ್ರ",
     categories: {
@@ -231,7 +231,7 @@ export function ProductDetail({ product }: { product: ProductDetails }) {
               </dl>
             </div>
 
-            <a className="detail-visit-link" href={MAPS_URL} target="_blank" rel="noreferrer"><MapPin aria-hidden="true" size={20} /><span>{t.visit}<small>MG Road, Haveri – 581110</small></span><ChevronRight aria-hidden="true" size={20} /></a>
+            <a className="detail-visit-link" href={MAPS_URL} target="_blank" rel="noreferrer"><MapPin aria-hidden="true" size={20} /><span>{t.visit}<small>MG Road, near Head Post Office, Haveri – 581110</small></span><ChevronRight aria-hidden="true" size={20} /></a>
             <p className="detail-support"><Wrench aria-hidden="true" size={19} />{t.support}</p>
           </div>
         </section>

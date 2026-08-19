@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
 
   const description =
     product.description_en ??
-    `${product.name_en} available at Santosh Cycles on MG Road, Haveri.`;
+    `${product.name_en} available at Santosh Cycles on MG Road near Head Post Office, Haveri.`;
   const image = product.images[0]?.image_url;
 
   return {

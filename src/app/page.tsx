@@ -13,7 +13,7 @@ const localBusinessSchema = {
   telephone: ["+91 99001 38902", "+91 94803 42035"],
   address: {
     "@type": "PostalAddress",
-    streetAddress: "MG Road",
+    streetAddress: "MG Road, near Head Post Office",
     addressLocality: "Haveri",
     postalCode: "581110",
     addressRegion: "Karnataka",

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     template: "%s | Santosh Cycles",
   },
   description:
-    "Cycles for every age, accessories, spare parts and complete cycle repairs at Santosh Cycles, MG Road, Haveri.",
+    "Cycles for every age, accessories, spare parts and complete cycle repairs at Santosh Cycles, MG Road, near Head Post Office, Haveri.",
   keywords: [
     "cycle shop Haveri",
     "bicycle shop Haveri",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   openGraph: {
     title: "Santosh Cycles — Haveri",
-    description: "Cycles for every age, accessories, spare parts and complete repairs on MG Road, Haveri.",
+    description: "Cycles for every age, accessories, spare parts and complete repairs on MG Road near Head Post Office, Haveri.",
     type: "website",
     locale: "en_IN",
     alternateLocale: ["kn_IN"],
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Santosh Cycles — Haveri",
-    description: "Cycles for every age, accessories, spare parts and complete repairs on MG Road, Haveri.",
+    description: "Cycles for every age, accessories, spare parts and complete repairs on MG Road near Head Post Office, Haveri.",
   },
 };
 

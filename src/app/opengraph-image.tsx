@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Santosh Cycles — cycles for every age on MG Road, Haveri";
+export const alt = "Santosh Cycles — cycles for every age on MG Road near Head Post Office, Haveri";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -38,7 +38,7 @@ export default function OpenGraphImage() {
             Cycles for every age.
           </div>
           <div style={{ color: "#ffde69", display: "flex", fontSize: 32, fontWeight: 700, marginTop: 28 }}>
-            MG Road, Haveri
+            MG Road, near Head Post Office, Haveri
           </div>
         </div>
       </div>
