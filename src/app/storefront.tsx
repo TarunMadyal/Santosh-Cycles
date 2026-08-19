@@ -51,7 +51,8 @@ const copy = {
     ],
     catalogEyebrow: "Live catalogue",
     catalogTitle: "Cycles available in store",
-    catalogBody: "Products and prices added here will automatically appear on the website.",
+    catalogBody: "Products added to our online catalogue will automatically appear here.",
+    catalogNote: "Not every product is listed online yet. Visit our store to explore the complete range.",
     filters: {
       all: "All",
       baby: "Baby",
@@ -127,7 +128,8 @@ const copy = {
     ],
     catalogEyebrow: "ಲೈವ್ ಕ್ಯಾಟಲಾಗ್",
     catalogTitle: "ಅಂಗಡಿಯಲ್ಲಿ ಲಭ್ಯವಿರುವ ಸೈಕಲ್‌ಗಳು",
-    catalogBody: "ಇಲ್ಲಿ ಸೇರಿಸುವ ಉತ್ಪನ್ನಗಳು ಮತ್ತು ಬೆಲೆಗಳು ವೆಬ್‌ಸೈಟ್‌ನಲ್ಲಿ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಕಾಣಿಸುತ್ತವೆ.",
+    catalogBody: "ನಮ್ಮ ಆನ್‌ಲೈನ್ ಕ್ಯಾಟಲಾಗ್‌ಗೆ ಸೇರಿಸುವ ಉತ್ಪನ್ನಗಳು ಇಲ್ಲಿ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಕಾಣಿಸುತ್ತವೆ.",
+    catalogNote: "ಇನ್ನೂ ಎಲ್ಲಾ ಉತ್ಪನ್ನಗಳನ್ನು ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ಪಟ್ಟಿ ಮಾಡಿಲ್ಲ. ಸಂಪೂರ್ಣ ಶ್ರೇಣಿಯನ್ನು ನೋಡಲು ನಮ್ಮ ಅಂಗಡಿಗೆ ಭೇಟಿ ನೀಡಿ.",
     filters: {
       all: "ಎಲ್ಲಾ",
       baby: "ಚಿಕ್ಕ ಮಕ್ಕಳು",
@@ -306,6 +308,11 @@ export function Storefront({ products }: { products: Product[] }) {
             <div><p className="eyebrow">{t.catalogEyebrow}</p><h2>{t.catalogTitle}</h2></div>
             <p>{t.catalogBody}</p>
           </div>
+          <a className="catalog-note" href="#visit">
+            <MapPin aria-hidden="true" size={21} />
+            <span>{t.catalogNote}</span>
+            <ChevronRight aria-hidden="true" size={18} />
+          </a>
           <div className="filter-row" role="group" aria-label="Product categories">
             {(Object.keys(t.filters) as Filter[]).map((key) => (
               <button key={key} className={filter === key ? "filter-chip active" : "filter-chip"} onClick={() => setFilter(key)} type="button" aria-pressed={filter === key}>

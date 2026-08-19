@@ -68,6 +68,10 @@ h1 { font-size: clamp(43px, 11.5vw, 80px); letter-spacing: -.064em; line-height:
 
 .catalog-section { background: #eceae3; padding-block: 72px; }
 .catalog-intro p:last-child { color: var(--muted); font-size: 14px; line-height: 1.6; }
+.catalog-note { align-items: center; background: #fff5cc; border: 1px solid #e3ca66; border-radius: 14px; display: grid; gap: 10px; grid-template-columns: auto 1fr auto; margin-top: 24px; padding: 14px 15px; }
+.catalog-note > svg:first-child { color: var(--red); }
+.catalog-note > svg:last-child { color: #766322; }
+.catalog-note span { font-size: 13px; font-weight: 800; line-height: 1.45; }
 .filter-row { display: flex; gap: 8px; margin: 27px -18px 24px; overflow-x: auto; padding: 0 18px 8px; scrollbar-width: none; }
 .filter-row::-webkit-scrollbar { display: none; }
 .filter-chip { background: transparent; border: 1px solid #c9c8c2; border-radius: 999px; color: var(--ink); cursor: pointer; flex: 0 0 auto; font-size: 12px; font-weight: 800; min-height: 40px; padding: 0 16px; }
